@@ -12,67 +12,67 @@
       body {
         margin: 0;
         font-family: "Helvetica Neue", Arial, sans-serif;
-        background: #f4f5f7;
-        color: #1a1a1a;
+        background: #0f1117;
+        color: #f5f7ff;
       }
 
       .page {
         min-height: 100vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 2rem;
+        padding: 3rem 4rem;
       }
 
-      .card {
-        background: #ffffff;
-        border-radius: 20px;
-        padding: 2.5rem;
-        max-width: 720px;
-        width: 100%;
-        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
-        display: grid;
-        grid-template-columns: 180px 1fr;
-        gap: 2rem;
-        align-items: center;
+      .hero {
         position: relative;
+        max-width: 960px;
       }
 
       .profile-photo {
-        width: 180px;
-        height: 180px;
-        border-radius: 50%;
+        width: 160px;
+        height: 160px;
+        border-radius: 28px;
         object-fit: cover;
-        border: 4px solid #e0e4eb;
-        background: #d9dde4;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        background: #1c2230;
         display: block;
       }
 
+      .hero-content {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+      }
+
+      .bio {
+        max-width: 520px;
+      }
+
       .bio h1 {
-        margin: 0 0 0.5rem;
-        font-size: 2.2rem;
+        margin: 0 0 0.75rem;
+        font-size: 2.5rem;
       }
 
       .bio p {
-        margin: 0 0 1rem;
-        line-height: 1.6;
+        margin: 0 0 1.25rem;
+        line-height: 1.7;
         font-size: 1.05rem;
+        color: rgba(245, 247, 255, 0.85);
       }
 
       .bio .details {
         display: inline-flex;
         gap: 0.5rem;
         align-items: center;
-        padding: 0.4rem 0.8rem;
+        padding: 0.4rem 0.9rem;
         border-radius: 999px;
-        background: #f0f2f6;
+        background: rgba(255, 255, 255, 0.08);
         font-size: 0.9rem;
+        color: rgba(245, 247, 255, 0.75);
       }
 
       .social-links {
         position: absolute;
-        top: 1.5rem;
-        right: 1.5rem;
+        top: 0;
+        right: 0;
         display: inline-flex;
         gap: 0.75rem;
       }
@@ -80,12 +80,12 @@
       .social-links a {
         width: 40px;
         height: 40px;
-        border-radius: 50%;
-        background: #f0f2f6;
+        border-radius: 12px;
+        background: rgba(255, 255, 255, 0.08);
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        color: #1a1a1a;
+        color: #f5f7ff;
         text-decoration: none;
         transition: transform 0.2s ease, background 0.2s ease;
       }
@@ -93,7 +93,7 @@
       .social-links a:hover,
       .social-links a:focus-visible {
         transform: translateY(-2px);
-        background: #e2e6ee;
+        background: rgba(255, 255, 255, 0.18);
       }
 
       .social-links svg {
@@ -101,32 +101,31 @@
         height: 20px;
       }
 
-      @media (max-width: 720px) {
-        .card {
-          grid-template-columns: 1fr;
-          text-align: center;
-          padding-top: 4rem;
+      @media (max-width: 900px) {
+        .page {
+          padding: 2.5rem;
         }
 
-        .profile-photo {
-          margin: 0 auto;
+        .hero-content {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+      }
+
+      @media (max-width: 600px) {
+        .page {
+          padding: 2rem 1.5rem;
         }
 
-        .bio .details {
-          justify-content: center;
-        }
-
-        .social-links {
-          top: 1.5rem;
-          right: 50%;
-          transform: translateX(50%);
+        .hero-content {
+          gap: 1.5rem;
         }
       }
     </style>
   </head>
   <body>
     <main class="page">
-      <section class="card">
+      <section class="hero">
         <div class="social-links" aria-label="Social links">
           <a
             href="https://www.linkedin.com/in/sjzamani/"
@@ -167,19 +166,21 @@
             </svg>
           </a>
         </div>
-        <img
-          class="profile-photo"
-          src="https://via.placeholder.com/360"
-          alt="Profile portrait"
-        />
-        <div class="bio">
-          <h1>Your Name</h1>
-          <p>
-            Hi! I'm a designer and developer who loves building friendly web
-            experiences. I focus on clean visuals, thoughtful interactions, and
-            meaningful storytelling.
-          </p>
-          <span class="details">📍 City, Country · ✉️ hello@example.com</span>
+        <div class="hero-content">
+          <img
+            class="profile-photo"
+            src="https://via.placeholder.com/360"
+            alt="Profile portrait"
+          />
+          <div class="bio">
+            <h1>Your Name</h1>
+            <p>
+              Hi! I'm a designer and developer who loves building friendly web
+              experiences. I focus on clean visuals, thoughtful interactions, and
+              meaningful storytelling.
+            </p>
+            <span class="details">📍 City, Country · ✉️ hello@example.com</span>
+          </div>
         </div>
       </section>
     </main>
